@@ -14,9 +14,12 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  if(a == b && b == c && a == c)
+  raise TriangleError unless (a > 0) && (b > 0) && (c > 0)
+  raise TriangleError unless (a + b > c) && (b + c > a) && (c + a > b) 
+
+  if(a == b && b == c)
     :equilateral
-  elsif((a == b) || (a == c) || (b == c))
+  elsif((a == b) || (b == c) || (c == a))
     :isosceles
   else
     :scalene
