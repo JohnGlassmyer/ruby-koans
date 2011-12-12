@@ -12,10 +12,7 @@ class DiceSet
 	end
 
 	def roll(numberOfDice)
-		@values = []
-		numberOfDice.times do
-			@values << @random.rand(6) + 1
-		end
+		@values = (1..numberOfDice).map { @random.rand(6) + 1 }
 	end
 
 	def values
